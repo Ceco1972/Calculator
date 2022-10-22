@@ -56,7 +56,7 @@ function updateDisplay()
     display.innerText = displayValue;
     if(displayValue.length>9)
     {
-        display.innerText = displayValue.substring(0, 8);
+        display.innerText = displayValue.substring(0, 9);
     }
 }
 updateDisplay();
@@ -91,26 +91,21 @@ function inputOperator(operator)
     {
         secondOperator=operator;
         secondOperand=displayValue;
-        result=operate(Number(firstOperand), Number(secondOperand), firstOperator);
+        result=operate(Number(firstOperand), Number(secondOperand), secondOperator);
+        secondOperator = operator;
         displayValue=roundAccurately(result, 15).toString();
         firstOperand=displayValue;
-        updateDisplay();
-
-       result=null;
+        result=null;
     } 
-    else if(firstOperator != null && secondOperator != null) 
-    {
+    else if(firstOperator != null && secondOperator != null) {
         //6th click - new secondOperator
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
         secondOperator = operator;
         displayValue = roundAccurately(result, 15).toString();
         firstOperand = displayValue;
-        updateDisplay();
-        result = null;
-
-    }
-     else
+        result = null;}
+    else
     {
         firstOperator = operator;
         firstOperand = displayValue;
