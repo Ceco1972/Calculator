@@ -125,9 +125,9 @@ function inputEquals()
     {
         secondOperand=displayValue;
         result=operate(Number(firstOperand), Number(secondOperand), secondOperator);
-        if(result==='No way!')
+        if(result==='Imao')
         {
-            displayValue='No way!';
+            displayValue='Imao';
         }else 
         {
             displayValue=roundAccurately(result, 15).toString();
@@ -141,9 +141,9 @@ function inputEquals()
     {
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), firstOperator);
-        if(result==='No way!')
+        if(result==='Imao')
         {
-            displayValue='No way!';
+            displayValue='Imao';
         }else
         {
             displayValue=roundAccurately(result, 15).toString();
@@ -174,7 +174,7 @@ function operate(x, y, op)
     {
         if(y===0)
         {
-            return 'No way!';
+            return 'Imao';
         }else {return x/y;}
     }
 }
